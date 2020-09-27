@@ -10,11 +10,6 @@ void noteOff(byte channel, byte pitch, byte velocity){
   MidiUSB.sendMIDI(noteOff);
 }
 
-void controlChange(byte channel, byte control, byte value){
-  midiEventPacket_t event = {0x0B, 0xB0 | channel, control, value};
-  MidiUSB.sendMIDI(event);
-}
-
 void setup()
 {
   pinMode(2, INPUT);
